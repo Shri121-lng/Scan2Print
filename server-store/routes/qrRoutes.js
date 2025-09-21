@@ -16,7 +16,7 @@ router.get('/generate', async (req, res) => {
     const user = await User.findOne({ email });
     if (!user) return res.status(404).send('User not found');
 
-    const uploadPageUrl = `http://localhost:3001/upload?storeid=${encodeURIComponent(user.uniqueId)}`;
+    const uploadPageUrl = `https://scan2-print-upload.vercel.app/upload?storeid=${encodeURIComponent(user.uniqueId)}`;
     const qrCodeDataUrl = await QRCode.toDataURL(uploadPageUrl);
 
     res.status(200).json({ qrCodeDataUrl, uploadPageUrl });
