@@ -34,7 +34,7 @@ const navigate = useNavigate();
     try {
       // console.log("Updating recent history")
       const response = await axios.post(
-        'http://localhost:8001/history/update',
+        'https://scan2print-store.onrender.com/history/update',
         { operation, filename },
         {
           headers: {
@@ -130,7 +130,7 @@ useEffect(() => {
                 alert("Failed to open new tab");
                 return;
               }try {
-                const response = await axios.get(`http://localhost:8001/files/${fileId}`, {
+                const response = await axios.get(`https://scan2print-store.onrender.com/files/${fileId}`, {
                   headers: {
                     Authorization: `Bearer ${token}`,
                   },
@@ -160,7 +160,7 @@ useEffect(() => {
              
             } else if (actionType === "Print") {
               try {
-                const response = await axios.get(`http://localhost:8001/files/${fileId}`, {
+                const response = await axios.get(`https://scan2print-store.onrender.com/files/${fileId}`, {
                   headers: {
                     Authorization: `Bearer ${token}`,
                   },
@@ -201,7 +201,7 @@ useEffect(() => {
               }
             } else if (actionType === "Delete") {
               try {
-                await axios.delete(`http://localhost:8001/files/${fileId}`, {
+                await axios.delete(`https://scan2print-store.onrender.com/files/${fileId}`, {
                   headers: {
                     Authorization: `Bearer ${token}`,
                   },

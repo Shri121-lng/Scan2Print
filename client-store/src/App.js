@@ -70,7 +70,7 @@ function App() {
         const token = await user.getIdToken(true); 
         
 
-        const response = await axios.get(`http://localhost:8001/files`, {
+        const response = await axios.get(`https://scan2print-store.onrender.com/files`, {
           headers: {
             Authorization: `Bearer ${token}`, 
           },
