@@ -58,7 +58,7 @@ if (!admin.apps.length) {
 app.use('/files', verifyToken, fileRoutes);
 app.use('/qr', verifyToken, qrRoutes);
 app.use('/auth', verifyToken, authRoutes);
-app.use('/history', verifyToken, historyRoutes);
+// app.use('/history', verifyToken, historyRoutes);
 
 // Health check endpoint
 app.get('/health', (req, res) => {
